@@ -4,10 +4,9 @@ Filename: simplex_grid.py
 Author: Daisuke Oyama
 
 Thie module provides a function that constructs a grid for a simplex as
-well as a funciton that determines the index of a point in the simplex.
+well as one that determines the index of a point in the simplex.
 
 """
-from __future__ import division
 import numpy as np
 import scipy.misc
 from numba import jit
@@ -21,8 +20,8 @@ def simplex_grid(m, n):
     :math:`\{x \mid x_0 + \cdots + x_{m-1} = n\}`,
     or equivalently, the m-part compositions of n, which are listed in
     lexicographic order. The total number of the points (hence the
-    length of the output array) is :math:`L = (n+m-1)!/(n!*(m-1)!)`
-    (i.e., (n+m-1) choose (m-1)).
+    length of the output array) is L = (n+m-1)!/(n!*(m-1)!) (i.e.,
+    (n+m-1) choose (m-1)).
 
     Parameters
     ----------
@@ -63,7 +62,7 @@ def simplex_grid(m, n):
            [3, 1, 0],
            [4, 0, 0]])
 
-    >>> from __future__ import division
+    >>> from __future__ import division  # Omit for Python 3.x
     >>> simplex_grid(3, 4) / 4
     array([[ 0.  ,  0.  ,  1.  ],
            [ 0.  ,  0.25,  0.75],
