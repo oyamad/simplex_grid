@@ -16,10 +16,9 @@ from numba import jit
 def simplex_grid(m, n):
     r"""
     Construct an array consisting of the integer points in the
-    (m-1)-dimensional simplex
-    :math:`\{x \mid x_0 + \cdots + x_{m-1} = n\}`,
-    or equivalently, the m-part compositions of n, which are listed in
-    lexicographic order. The total number of the points (hence the
+    (m-1)-dimensional simplex :math:`\{x \mid x_0 + \cdots + x_{m-1} = n
+    \}`, or equivalently, the m-part compositions of n, which are listed
+    in lexicographic order. The total number of the points (hence the
     length of the output array) is L = (n+m-1)!/(n!*(m-1)!) (i.e.,
     (n+m-1) choose (m-1)).
 
@@ -62,7 +61,6 @@ def simplex_grid(m, n):
            [3, 1, 0],
            [4, 0, 0]])
 
-    >>> from __future__ import division  # Omit for Python 3.x
     >>> simplex_grid(3, 4) / 4
     array([[ 0.  ,  0.  ,  1.  ],
            [ 0.  ,  0.25,  0.75],
@@ -117,8 +115,8 @@ def simplex_grid(m, n):
 def simplex_index(x, m, n):
     r"""
     Return the index of the point x in the lexicographic order of the
-    integer points of the (m-1)-dimensional simplex
-    :math:`\{x \mid x_0 + \cdots + x_{m-1} = n\}`.
+    integer points of the (m-1)-dimensional simplex :math:`\{x \mid x_0
+    + \cdots + x_{m-1} = n\}`.
 
     Parameters
     ----------
@@ -189,5 +187,5 @@ def num_compositions(m, n):
         Total number of m-part compositions of n.
 
     """
-    # github.com/scipy/scipy/blob/v0.15.0/scipy/special/basic.py#L1139
+    # docs.scipy.org/doc/scipy/reference/generated/scipy.misc.comb.html
     return scipy.misc.comb(n+m-1, m-1, exact=True)

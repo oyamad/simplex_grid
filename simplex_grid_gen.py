@@ -13,9 +13,8 @@ from simplex_grid import simplex_index, num_compositions
 class SimplexGrid(object):
     r"""
     Generate the integer points in the (m-1)-dimensional simplex
-    :math:`\{x \mid x_0 + \cdots + x_{m-1} = n\}`,
-    or equivalently, the m-part compositions of n, in lexicographic
-    order.
+    :math:`\{x \mid x_0 + \cdots + x_{m-1} = n\}`, or equivalently, the
+    m-part compositions of n, in lexicographic order.
 
     Parameters
     ----------
